@@ -1,0 +1,103 @@
+spring boot2 ----------------------------------
+
+env：
+jdk:1.8
+springboot:2.0.4
+mysql
+RedisTemplate
+
+run:
+http://localhost:2222/hello?name=123
+http://localhost:2222/customers?name=customer1&telephone=13512345678
+http://localhost:2222/customers/cache
+
+deploy：
+1. idea run maven: mvn install -DskipTests
+
+2-1. 启动类：com.example.demo.Application
+
+2-2. /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/bin/java -jar target/spring-boot-netty-demo-1.0.0-SNAPSHOT.jar
+
+logs：
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.4.RELEASE)
+
+2019-03-21 09:47:53.111  INFO 1201 --- [           main] com.example.demo.Application             : Starting Application v1.0.0-SNAPSHOT on chenlisongdeMacBook-Pro.local with PID 1201 (/Users/chenlisong/Documents/project/spring-boot-demo/target/spring-boot-demo-1.0.0-SNAPSHOT.jar started by chenlisong in /Users/chenlisong/Documents/project/spring-boot-demo)
+2019-03-21 09:47:53.116  INFO 1201 --- [           main] com.example.demo.Application             : No active profile set, falling back to default profiles: default
+2019-03-21 09:47:53.199  INFO 1201 --- [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c679bde: startup date [Thu Mar 21 09:47:53 CST 2019]; root of context hierarchy
+2019-03-21 09:47:54.166  INFO 1201 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-03-21 09:47:54.785  INFO 1201 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.example.demo.config.RedisConfig$$EnhancerBySpringCGLIB$$fdd45755] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 09:47:54.795  INFO 1201 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$540570c5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-21 09:47:55.448  INFO 1201 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-03-21 09:47:55.485  INFO 1201 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-21 09:47:55.486  INFO 1201 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2019-03-21 09:47:55.501  INFO 1201 --- [ost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/chenlisong/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2019-03-21 09:47:55.596  INFO 1201 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-21 09:47:55.596  INFO 1201 --- [ost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2401 ms
+2019-03-21 09:47:55.689  INFO 1201 --- [ost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-21 09:47:55.695  INFO 1201 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-21 09:47:55.697  INFO 1201 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-03-21 09:47:55.697  INFO 1201 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-03-21 09:47:55.697  INFO 1201 --- [ost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-03-21 09:47:56.616  INFO 1201 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-21 09:47:56.949  INFO 1201 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@3c679bde: startup date [Thu Mar 21 09:47:53 CST 2019]; root of context hierarchy
+2019-03-21 09:47:57.048  INFO 1201 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello]}" onto public java.lang.String com.example.demo.Application.hello(java.lang.String)
+2019-03-21 09:47:57.054  INFO 1201 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customers],methods=[GET]}" onto public com.example.demo.bean.Customer com.example.demo.controller.CustomerController.get(java.lang.String,java.lang.String)
+2019-03-21 09:47:57.054  INFO 1201 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customers/cache],methods=[GET]}" onto public java.lang.Object com.example.demo.controller.CustomerController.getCache()
+2019-03-21 09:47:57.058  INFO 1201 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-03-21 09:47:57.059  INFO 1201 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-03-21 09:47:57.107  INFO 1201 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-21 09:47:57.107  INFO 1201 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-03-21 09:47:57.716  INFO 1201 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-03-21 09:47:57.718  INFO 1201 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2019-03-21 09:47:57.724  INFO 1201 --- [           main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2019-03-21 09:47:57.784  INFO 1201 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
+2019-03-21 09:47:57.789  INFO 1201 --- [           main] com.example.demo.Application             : Started Application in 5.182 seconds (JVM running for 5.749)
+2019-03-21 09:48:02.349  INFO 1201 --- [nio-2222-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-03-21 09:48:02.350  INFO 1201 --- [nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2019-03-21 09:48:02.392  INFO 1201 --- [nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 42 ms
+computer-server1 execute name: 123
+
+netty server and client----------------------------------
+
+启动netty server: com.exmaple.demo.Application -> com.example.demo.netty.NettyServer
+
+启动netty client：com.example.demo.NettyClient
+
+自定义协议：com.example.demo.bean.SmartProtocol
+
+自定义编解码：com.example.demo.netty.smart.*
+
+server client socket处理器：com.example.demo.netty.handler.*
+
+测试方式：先启动server，在启动client
+
+ * 1. 实现自定义通信协议，自实现拆包，粘包 fix
+ * 2. 心跳检测客户端动态 fix
+ * 3. 定时push数据 fix
+ * 4. 可操作mysql，redis fix
+ * 5. netty集成到spring里 fix
+
+netty server log info：
+2019-03-22 21:08:32.207  INFO 18744 --- [ntLoopGroup-2-1] io.netty.handler.logging.LoggingHandler  : [id: 0xd4b3c054, L:/0:0:0:0:0:0:0:0:8888] READ: [id: 0x5a5090c7, L:/127.0.0.1:8888 - R:/127.0.0.1:54200]
+2019-03-22 21:08:32.209  INFO 18744 --- [ntLoopGroup-2-1] io.netty.handler.logging.LoggingHandler  : [id: 0xd4b3c054, L:/0:0:0:0:0:0:0:0:8888] READ COMPLETE
+2019-03-22 21:08:36.234  INFO 18744 --- [ntLoopGroup-3-1] c.e.d.netty.handler.ServerLoopHandler    : server: client access, address: /127.0.0.1:54200, msg: SmartProtocol [head_data=118, contentLength=9, content=Heartbeat]
+2019-03-22 21:08:40.222  INFO 18744 --- [ntLoopGroup-3-1] c.e.d.netty.handler.ServerLoopHandler    : server: client access, address: /127.0.0.1:54200, msg: SmartProtocol [head_data=118, contentLength=9, content=Heartbeat]
+2019-03-22 21:08:45.265  INFO 18744 --- [ntLoopGroup-3-1] c.e.d.netty.handler.ServerLoopHandler    : lost client 5 senconds
+2019-03-22 21:08:50.265  INFO 18744 --- [ntLoopGroup-3-1] c.e.d.netty.handler.ServerLoopHandler    : lost client 5 senconds
+2019-03-22 21:08:55.265  INFO 18744 --- [ntLoopGroup-3-1] c.e.d.netty.handler.ServerLoopHandler    : lost client 5 senconds
+
+netty client log info：
+21:08:40.222 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: happen idle event: Fri Mar 22 21:08:40 CST 2019
+21:08:44.223 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: happen idle event: Fri Mar 22 21:08:44 CST 2019
+21:08:45.268 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: access message: SmartProtocol [head_data=118, contentLength=28, content=server: heart bong bong ... ] time is Fri Mar 22 21:08:45 CST 2019
+21:08:48.223 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: happen idle event: Fri Mar 22 21:08:48 CST 2019
+21:08:50.265 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: access message: SmartProtocol [head_data=118, contentLength=28, content=server: heart bong bong ... ] time is Fri Mar 22 21:08:50 CST 2019
+21:08:52.223 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: happen idle event: Fri Mar 22 21:08:52 CST 2019
+21:08:55.266 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: access message: SmartProtocol [head_data=118, contentLength=28, content=server: heart bong bong ... ] time is Fri Mar 22 21:08:55 CST 2019
+21:08:56.223 [nioEventLoopGroup-2-1] INFO com.example.demo.netty.handler.ClientHandler - client: happen idle event: Fri Mar 22 21:08:56 CST 2019
