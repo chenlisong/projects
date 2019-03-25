@@ -1,0 +1,58 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'spring-guide'
+    version =  '0.1.0'
+}
+
+springBoot {
+	mainClass = "gs.authenticating.ldap.Application"
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile(
+    	"org.springframework.boot:spring-boot-starter-web",
+    	"org.springframework.boot:spring-boot-starter",
+    	"org.springframework:spring-web",
+    	"com.fasterxml.jackson.core:jackson-databind",
+    	//gs.relational.data.access加入
+    	"org.springframework:spring-jdbc",
+    	"com.h2database:h2",
+    	"junit:junit",
+    	//gs.uploading.files加入
+    	"org.springframework.boot:spring-boot-starter-thymeleaf",
+    	"org.springframework.boot:spring-boot-devtools",
+    	"org.springframework.boot:spring-boot-configuration-processor",
+    	"org.springframework.boot:spring-boot-starter-test",
+    	
+		//gs.authenticating.ldap加入    	
+	    "org.springframework.boot:spring-boot-starter-security",
+	    "org.springframework.security:spring-security-ldap",
+	    "org.springframework:spring-tx",
+	    "org.apache.directory.server:apacheds-server-jndi:1.5.5"
+    )
+    testCompile("org.springframework.boot:spring-boot-starter-test",
+    "org.springframework.security:spring-security-test")
+    
+}
+

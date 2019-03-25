@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.TransferMapper">
+
+	<resultMap id="results" type="Transfer">
+		<result property="id" column="pk_id" />
+		<result property="srcId" column="fk_src_id" />
+		<result property="targetId" column="fk_target_id" />
+		<result property="type" column="type" />
+		<result property="card" column="card" />
+		<result property="formIdOne" column="form_id_one" />
+		<result property="formIdTwo" column="form_id_two" />
+		<result property="state" column="state" />
+        <result property="fixTime" column="fix_time" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Transfer" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_transfer(`fk_src_id`, `fk_target_id`, `type`, `card`, `state`, `create_time`, `fix_time`, `form_id_one`, `form_id_two`)
+		VALUES(#{srcId}, #{targetId}, #{type}, #{card}, #{state}, now(), now(), #{formIdOne}, #{formIdTwo})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="results">
+		SELECT * 
+		FROM t_transfer
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_transfer
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_transfer
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_transfer
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Transfer">
+		UPDATE t_transfer
+		<set>
+			<if test="srcId != null">
+				`fk_src_id` = #{srcId},
+			</if>
+			<if test="targetId != null">
+				`fk_target_id` = #{targetId},
+			</if>
+			<if test="type != null">
+				`type` = #{type},
+			</if>
+			<if test="card != null">
+				`card` = #{card},
+			</if>
+			<if test="state != null">
+				`state` = #{state},
+			</if>
+			<if test="createTime != null">
+				`create_time` = #{createTime},
+			</if>
+			<if test="fixTime != null">
+				`fix_time` = #{fixTime},
+			</if>
+			<if test="formIdOne != null">
+				`form_id_one` = #{formIdOne},
+			</if>
+            <if test="formIdTwo != null">
+                `form_id_two` = #{formIdTwo},
+            </if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_transfer
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_transfer
+    </delete>
+
+	<update id="fix" parameterType="Map">
+		UPDATE t_transfer
+		set
+			`fk_target_id` = #{targetId},
+			`state` = #{state},
+			`form_id_two` = #{formIdTwo},
+			`fix_time` = now()
+		WHERE pk_id = #{id} and state = 1
+	</update>
+
+	<select id="selectBySrcId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_transfer
+		WHERE fk_src_id = #{srcId}
+		<if test="type > 0">
+			and `type` = #{type}
+		</if>
+		<if test="card > 0">
+			and `card` = #{card}
+		</if>
+		<if test="state > 0">
+			and `state` = #{state}
+		</if>
+		order by pk_id desc
+	</select>
+
+	<select id="selectByTargetId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_transfer
+		WHERE fk_target_id = #{targetId}
+		order by pk_id desc
+	</select>
+
+</mapper>

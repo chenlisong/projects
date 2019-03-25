@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.duolanjian.java.eagle.mapper.HourMapper">
+
+	<resultMap id="hourMap" type="Hour">
+		<result property="id" column="pk_id" />
+		<result property="beginTime" column="begin_time" />
+		<result property="endTime" column="end_time" />
+		<result property="content" column="content" />
+		<result property="complete" column="complete" />
+		<result property="dayId" column="fk_day_id" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Hour" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_hour(`begin_time`, `end_time`, `content`, `complete`, `fk_day_id`) 
+		VALUES(#{beginTime}, #{endTime}, #{content}, #{complete}, #{dayId})
+	</insert>
+
+	<update id="update" parameterType="Hour">
+		UPDATE t_hour
+		SET `begin_time` = #{beginTime},
+		    `end_time` = #{endTime},
+		    `content` = #{content},
+		    `complete` = #{complete},
+		    `fk_day_id` = #{dayId}
+		WHERE pk_id = #{id}
+	</update>
+	
+	<select id="selectOne" parameterType="Map" resultMap="hourMap">
+		SELECT * 
+		FROM t_hour
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="hourMap">
+        SELECT * 
+        FROM t_hour
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    
+    <select id="selectListByIds" parameterType="Map" resultMap="hourMap">
+        SELECT * 
+        FROM t_hour
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_hour
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_hour
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_hour
+    </delete>
+	
+	<select id="selectByDayId" parameterType="Map" resultMap="hourMap">
+        SELECT * 
+        FROM t_hour
+        where fk_day_id = #{dayId}
+        order by begin_time asc
+    </select>
+	
+</mapper>

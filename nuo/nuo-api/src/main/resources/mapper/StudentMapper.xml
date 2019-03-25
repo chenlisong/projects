@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.StudentMapper">
+
+	<resultMap id="studentMap" type="Student">
+		<result property="id" column="pk_id" />
+		<result property="name" column="name" />
+		<result property="birthday" column="birthday" />
+		<result property="sex" column="sex" />
+		<result property="pic" column="pic" />
+		<result property="classId" column="fk_class_id" />
+		<result property="managerId" column="fk_manager_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_student(`name`, `birthday`, `sex`, `pic`, `fk_school_id`, fk_class_id`, `fk_manager_id`, `create_time`)
+		VALUES(#{name}, #{birthday}, #{sex}, #{pic}, #{schoolId}, #{classId}, #{managerId}, #{createTime})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="studentMap">
+		SELECT * 
+		FROM t_student
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="studentMap">
+        SELECT * 
+        FROM t_student
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="studentMap">
+        SELECT * 
+        FROM t_student
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_student
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Student">
+		UPDATE t_student
+		SET `name` = #{name},
+		`birthday` = #{birthday},
+		`sex` = #{sex},
+		`pic` = #{pic},
+		`fk_school_id` = #{schoolId},
+		`fk_class_id` = #{classId},
+		`fk_manager_id` = #{managerId},
+		`create_time` = #{createTime}
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_student
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_student
+    </delete>
+	<select id="selectByName" parameterType="Map" resultMap="studentMap">
+		SELECT *
+		FROM t_student
+		WHERE name = #{name}
+	</select>
+	<select id="countByName" parameterType="Map" resultType="Integer">
+		SELECT count(1)
+		FROM t_student
+		WHERE name = #{name}
+	</select>
+</mapper>

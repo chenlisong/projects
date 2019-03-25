@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.UserChildMapper">
+
+	<resultMap id="results" type="UserChild">
+		<result property="id" column="pk_id" />
+		<result property="parentId" column="fk_parent_id" />
+		<result property="childId" column="fk_child_id" />
+		<result property="shopId" column="fk_shop_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="UserChild" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_user_child(`fk_parent_id`, `fk_child_id`, `fk_shop_id`, `create_time`)
+		VALUES(#{parentId}, #{childId}, #{shopId}, now())
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="results">
+		SELECT * 
+		FROM t_user_child
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_user_child
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_user_child
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_user_child
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="UserChild">
+		UPDATE t_user_child
+		<set>
+			<if test="parentId != null">
+				`fk_parent_id` = #{parentId},
+			</if>
+			<if test="childId != null">
+				`fk_child_id` = #{childId},
+			</if>
+			<if test="createTime != null">
+				`create_time` = #{createTime},
+			</if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_user_child
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_user_child
+    </delete>
+
+	<select id="selectByShopId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_user_child
+		WHERE fk_shop_id = #{shopId}
+		<if test="parentId > 0">
+			and fk_parent_id = #{parentId}
+		</if>
+		<if test="childId > 0">
+			and fk_child_id = #{childId}
+		</if>
+	</select>
+
+</mapper>

@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;"> {{item.id}}         </switch>
+  <button bindtap="switch"> Switch </button>
+  <button bindtap="addToFront"> Add to the front </button>
+
+  <switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+  <button bindtap="addNumberToFront"> Add to the front </button>
+
+  <block wx:for="{{[1, 2, 3]}}">
+    <view> {{index}}: </view>
+    <view> {{item}} </view>
+  </block>
+
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="key" wx:for-item="i">
+    <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:key="key" wx:for-item="j">
+      <view wx:if="{{i <= j}}">
+        {{i}} * {{j}} = {{i * j}}
+      </view>
+    </view>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  
+</view>

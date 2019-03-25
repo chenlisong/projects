@@ -1,0 +1,147 @@
+[INFO] [2018-07-09 10:27:52][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-07-09 10:27:52][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@28701274, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@13c9d689, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3754a4bf, org.springframework.test.context.support.DirtiesContextTestExecutionListener@62379589, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4afcd809, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@175c2241]
+[INFO] [2018-07-09 10:27:52][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-09 10:27:53][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@3d34d211: startup date [Mon Jul 09 10:27:53 CST 2018]; root of context hierarchy
+[INFO] [2018-07-09 10:27:54][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-09 22:04:27][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2018-07-09 22:04:27][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Mon Jul 09 22:04:27 CST 2018]; root of context hierarchy
+[INFO] [2018-07-09 22:04:27][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-09 22:04:28][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-09 22:04:28][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5 [built 02-January-2015 13:25:04 -0500; debug? true; trace: 10]
+[INFO] [2018-07-09 22:04:29][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [xiaonuo.properties]
+[INFO] [2018-07-09 22:04:29][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-09 22:04:30][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 2461 ms
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2018-07-09 22:04:30][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 09 22:04:30 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-09 22:04:30][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2018-07-09 22:04:30][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-09 22:04:30][org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessor]No TaskExecutor bean found for async annotation processing.
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/files],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post(com.yinuo.bean.User,org.springframework.web.multipart.MultipartFile)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/get-token],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post1()
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post2()
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/transfers],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.TransferController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/transfers],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.TransferController.send(com.yinuo.bean.User,int,int,java.lang.String)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/transfers/fix],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.TransferController.fix(com.yinuo.bean.User,int,java.lang.String)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inititors],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.InititorController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inititors/call],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.InititorController.postCall(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inititors/help],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.InititorController.postHelp(com.yinuo.bean.User,int,java.lang.String)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/cards],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.CardController.get(com.yinuo.bean.User)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/cards/draw],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.CardController.post(com.yinuo.bean.User)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.UserController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechatLogin],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.post(java.lang.String)
+[INFO] [2018-07-09 22:04:30][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-09 22:04:31][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 09 22:04:30 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-09 22:04:31][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 09 22:04:30 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-09 22:04:31][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]Detected @ExceptionHandler methods in springExceptionHandlers
+[INFO] [2018-07-09 22:04:31][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1220 ms
+[INFO] [2018-07-09 22:04:32][com.yinuo.task.TaskService]execute taskCycle
+[ERROR] [2018-07-09 22:05:18][com.yinuo.util.JedisUtil]jedis error.
+redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool
+	at redis.clients.util.Pool.getResource(Pool.java:50)
+	at redis.clients.jedis.ShardedJedisPool.getResource(ShardedJedisPool.java:36)
+	at com.yinuo.util.JedisUtil.get(JedisUtil.java:86)
+	at com.yinuo.util.JedisUtil.get(JedisUtil.java:113)
+	at com.yinuo.service.UserService.selectByOpenid(UserService.java:35)
+	at com.yinuo.aspect.IndexAspect.around(IndexAspect.java:141)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:620)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:609)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
+	at com.yinuo.controller.InititorController$$EnhancerBySpringCGLIB$$f0900a20.get(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1496)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1467)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:208)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:274)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: java.util.NoSuchElementException: Unable to validate object
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:506)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at redis.clients.util.Pool.getResource(Pool.java:48)
+	... 66 more
+[INFO] [2018-07-09 22:05:18][com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource]Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge15y9wzc54z61tbjujj|21d8da75, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge15y9wzc54z61tbjujj|21d8da75, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://127.0.0.1:3306/card?useUnicode=true&characterEncoding=utf8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 180, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 60, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+[INFO] [2018-07-09 22:06:11][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2018-07-09 22:06:11][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Mon Jul 09 22:06:11 CST 2018]; root of context hierarchy
+[INFO] [2018-07-09 22:06:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-09 22:06:12][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-09 22:06:12][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5 [built 02-January-2015 13:25:04 -0500; debug? true; trace: 10]
+[INFO] [2018-07-09 22:06:12][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [xiaonuo.properties]
+[INFO] [2018-07-09 22:06:12][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-09 22:06:13][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1910 ms
+[INFO] [2018-07-09 22:06:13][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2018-07-09 22:06:13][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 09 22:06:13 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-09 22:06:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2018-07-09 22:06:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-09 22:06:13][org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessor]No TaskExecutor bean found for async annotation processing.
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/files],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post(com.yinuo.bean.User,org.springframework.web.multipart.MultipartFile)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/get-token],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post1()
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post2()
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/transfers],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.TransferController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/transfers],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.TransferController.send(com.yinuo.bean.User,int,int,java.lang.String)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/transfers/fix],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.TransferController.fix(com.yinuo.bean.User,int,java.lang.String)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inititors],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.InititorController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inititors/call],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.InititorController.postCall(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/inititors/help],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.InititorController.postHelp(com.yinuo.bean.User,int,java.lang.String)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/cards],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.CardController.get(com.yinuo.bean.User)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/cards/draw],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.CardController.post(com.yinuo.bean.User)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.UserController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechatLogin],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.post(java.lang.String)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 09 22:06:13 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 09 22:06:13 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]Detected @ExceptionHandler methods in springExceptionHandlers
+[INFO] [2018-07-09 22:06:14][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1250 ms
+[INFO] [2018-07-09 22:06:15][com.yinuo.task.TaskService]execute taskCycle
+[INFO] [2018-07-09 22:06:19][com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource]Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge15y9wzc7cxd1aem4xh|21d8da75, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge15y9wzc7cxd1aem4xh|21d8da75, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://47.100.24.40:3306/card?useUnicode=true&characterEncoding=utf8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 180, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 60, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+[INFO] [2018-07-09 22:06:20][com.yinuo.aspect.IndexAspect]request: url: http://127.0.0.1:8082/inititors, args: [{},0], response: {"code":401,"desc":"需要登录","loginUrl":"不授权无法使用，如果已经拒绝，请删除小程序，重新添加"}
+[INFO] [2018-07-09 22:07:10][com.yinuo.aspect.IndexAspect]request: url: http://127.0.0.1:8082/inititors, args: [{},0], userId: 5, openId: oiQwB5UUTIFZZLCAibyNzGKeeye0, response: {"data":[{"card":10,"createTime":"2018-07-09 16:33:10","formId":"1531125189649","id":59,"parent":{"card":2,"createTime":"2018-07-06 13:10:53","formId":"","id":38,"parentId":0,"readState":2,"state":2,"userId":4},"parentId":38,"readState":2,"state":2,"userId":5},{"card":8,"createTime":"2018-07-09 16:33:06","formId":"1531125185655","id":58,"parent":{"card":2,"createTime":"2018-07-06 13:10:53","formId":"","id":38,"parentId":0,"readState":2,"state":2,"userId":4},"parentId":38,"readState":2,"state":2,"userId":5},{"card":8,"createTime":"2018-07-07 14:47:35","formId":"","id":53,"parentId":0,"readState":0,"state":1,"userId":5}]}

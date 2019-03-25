@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.duolanjian.java.eagle.mapper.DayMapper">
+
+	<resultMap id="dayMap" type="Day">
+		<result property="id" column="pk_id" />
+		<result property="time" column="time" />
+		<result property="score" column="score" />
+		<result property="check" column="check" />
+		<result property="summary" column="summary" />
+		<result property="userName" column="user_name" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Day" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_day(`time`, `score`, `check`, `summary`, `user_name`) 
+		VALUES(#{time}, #{score}, #{check}, #{summary}, #{userName})
+	</insert>
+
+	<update id="update" parameterType="Day">
+		UPDATE t_day
+		SET `time` = #{time},
+		    `score` = #{score},
+		    `check` = #{check},
+		    `summary` = #{summary},
+		    `user_name` = #{userName}
+		WHERE pk_id = #{id}
+	</update>
+	
+	<select id="selectOne" parameterType="Map" resultMap="dayMap">
+		SELECT * 
+		FROM t_day
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="dayMap">
+        SELECT * 
+        FROM t_day
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="dayMap">
+        SELECT * 
+        FROM t_day
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_day
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_day
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_day
+    </delete>
+	
+	<select id="selectByTime" parameterType="Map" resultMap="dayMap">
+		SELECT * 
+		FROM t_day
+		WHERE user_name = #{userName}
+		and time &gt;= #{beginTime}
+		and time &lt;= #{endTime}
+	</select>
+	
+</mapper>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.UserShopMapper">
+
+	<resultMap id="results" type="UserShop">
+		<result property="id" column="pk_id" />
+		<result property="userId" column="fk_user_id" />
+		<result property="shopId" column="fk_shop_id" />
+		<result property="money" column="money" />
+		<result property="lastConsumeTime" column="last_consume_time" />
+		<result property="lastServerId" column="last_server_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="UserShop" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_user_shop(`fk_user_id`, `fk_shop_id`, `money`, `last_consume_time`, `last_server_id`, `create_time`)
+		VALUES(#{userId}, #{shopId}, #{money}, #{lastConsumeTime}, #{lastServerId}, now())
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="results">
+		SELECT * 
+		FROM t_user_shop
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_user_shop
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_user_shop
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_user_shop
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="UserShop">
+		UPDATE t_user_shop
+		<set>
+			<if test="userId != null">
+				`fk_user_id` = #{userId},
+			</if>
+			<if test="shopId != null">
+				`fk_shop_id` = #{shopId},
+			</if>
+			<if test="money != null">
+				`money` = #{money},
+			</if>
+			<if test="lastConsumeTime != null">
+				`last_consume_time` = #{lastConsumeTime},
+			</if>
+			<if test="lastServerId != null">
+				`last_server_id` = #{lastServerId},
+			</if>
+			<if test="createTime != null">
+				`create_time` = #{createTime},
+			</if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_user_shop
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_user_shop
+    </delete>
+
+	<select id="selectByUserShopId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_user_shop
+		WHERE 1 = 1
+		<if test="userId > 0">
+			and fk_user_id = #{userId}
+		</if>
+
+		<if test="shopId > 0">
+			and fk_shop_id = #{shopId}
+		</if>
+	</select>
+
+	<select id="countByUserShopId" parameterType="Map" resultType="int">
+		SELECT count(1)
+		FROM t_user_shop
+		WHERE 1 = 1
+		<if test="userId > 0">
+			and fk_user_id = #{userId}
+		</if>
+
+		<if test="shopId > 0">
+			and fk_shop_id = #{shopId}
+		</if>
+	</select>
+
+	<select id="selectByShopId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_user_shop
+		WHERE fk_shop_id = #{shopId} and pk_id > #{id} limit #{limit}
+	</select>
+
+	<update id="updateMoney" parameterType="Map">
+		UPDATE t_user_shop
+		<set>
+			money = money + #{updateMoney}
+		</set>
+		WHERE fk_shop_id = #{shopId} and fk_user_id = #{userId}
+	</update>
+
+</mapper>

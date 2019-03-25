@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.CourseMapper">
+
+	<resultMap id="courseMap" type="Course">
+		<result property="id" column="pk_id" />
+		<result property="name" column="name" />
+		<result property="beginTime" column="begin_time" />
+		<result property="endTime" column="end_time" />
+		<result property="classId" column="fk_class_id" />
+		<result property="teacherId" column="fk_teacher_id" />
+		<result property="remark" column="remark" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Course" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_course(`name`, `begin_time`, `end_time`, `fk_class_id`, `fk_teacher_id`, `remark`, `create_time`) 
+		VALUES(#{name}, #{beginTime}, #{endTime}, #{classId}, #{teacherId}, #{remark}, #{createTime})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="courseMap">
+		SELECT * 
+		FROM t_course
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="courseMap">
+        SELECT * 
+        FROM t_course
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="courseMap">
+        SELECT * 
+        FROM t_course
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_course
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Course">
+		UPDATE t_course
+		SET `name` = #{name},
+		`begin_time` = #{beginTime},
+		`end_time` = #{endTime},
+		`fk_class_id` = #{classId},
+		`fk_teacher_id` = #{teacherId},
+		`remark` = #{remark},
+		`create_time` = #{createTime}
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_course
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_course
+    </delete>
+    <select id="selectByClassId" parameterType="Map" resultMap="courseMap">
+        SELECT * 
+        FROM t_course
+        WHERE `fk_class_id` = #{classId}
+        and `begin_time` between #{beginTime} and #{endTime}
+        order by `begin_time`
+    </select>
+    <select id="countByClassId" parameterType="Map" resultType="Integer">
+        SELECT count(1) 
+        FROM t_course
+        WHERE `fk_class_id` = #{classId}
+        and `begin_time` between #{beginTime} and #{endTime}
+    </select>
+</mapper>

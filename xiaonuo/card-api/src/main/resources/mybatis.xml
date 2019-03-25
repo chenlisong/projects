@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="defaultStatementTimeout" value="5" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="User" type="com.yinuo.bean.User" />
+		<typeAlias alias="Card" type="com.yinuo.bean.Card" />
+		<typeAlias alias="Transfer" type="com.yinuo.bean.Transfer" />
+		<typeAlias alias="Inititor" type="com.yinuo.bean.Inititor" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/CardMapper.xml" />
+		<mapper resource="mapper/TransferMapper.xml" />
+		<mapper resource="mapper/InititorMapper.xml" />
+		
+	</mappers>
+
+</configuration>
+

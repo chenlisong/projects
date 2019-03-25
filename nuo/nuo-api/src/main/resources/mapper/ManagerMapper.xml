@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.ManagerMapper">
+
+	<resultMap id="managerMap" type="Manager">
+		<result property="id" column="pk_id" />
+		<result property="name" column="name" />
+		<result property="userId" column="fk_user_id" />
+		<result property="managerId" column="fk_manager_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Manager" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_manager(`name`, fk_user_id, `fk_manager_id`, `create_time`)
+		VALUES(#{name}, #{userId}, #{managerId}, #{createTime})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="managerMap">
+		SELECT * 
+		FROM t_manager
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="managerMap">
+        SELECT * 
+        FROM t_manager
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="managerMap">
+        SELECT * 
+        FROM t_manager
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_manager
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Manager">
+		UPDATE t_manager
+		SET `name` = #{name},
+		`fk_user_id` = #{userId},
+		`fk_manager_id` = #{managerId},
+		`create_time` = #{createTime}
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_manager
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_manager
+    </delete>
+
+	<select id="selectByUserid" parameterType="Map" resultMap="managerMap">
+		SELECT *
+		FROM t_manager
+		WHERE fk_user_id = #{userId}
+	</select>
+</mapper>

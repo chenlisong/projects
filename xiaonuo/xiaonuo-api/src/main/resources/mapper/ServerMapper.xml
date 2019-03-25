@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.ServerMapper">
+
+	<resultMap id="results" type="Server">
+		<result property="id" column="pk_id" />
+		<result property="name" column="name" />
+		<result property="pic" column="pic" />
+		<result property="role" column="role" />
+		<result property="userId" column="fk_user_id" />
+		<result property="shopId" column="fk_shop_id" />
+		<result property="workFlag" column="work_flag" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Server" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_server(`name`, `pic`, `role`, `fk_user_id`, `fk_shop_id`, `work_flag`,
+			`create_time`)
+		VALUES(#{name}, #{pic}, #{role}, #{userId}, #{shopId}, #{workFlag}, now())
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="results">
+		SELECT * 
+		FROM t_server
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_server
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_server
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_server
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Server">
+		UPDATE t_server
+		<set>
+			<if test="name != null">
+				`name` = #{name},
+			</if>
+			<if test="pic != null">
+				`pic` = #{pic},
+			</if>
+			<if test="role != null">
+				`role` = #{role},
+			</if>
+			<if test="userId != null">
+				`fk_user_id` = #{userId},
+			</if>
+			<if test="shopId != null">
+				`fk_shop_id` = #{shopId},
+			</if>
+			<if test="workFlag != null">
+				`work_flag` = #{workFlag},
+			</if>
+			<if test="createTime != null">
+				`create_time` = #{createTime},
+			</if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_server
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_server
+    </delete>
+
+	<select id="selectByShopId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_server
+		WHERE fk_shop_id = #{shopId}
+		<if test="workFlag > 0">
+			and work_flag = #{workFlag}
+		</if>
+	</select>
+</mapper>

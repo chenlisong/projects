@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.ScoreMapper">
+
+	<resultMap id="scoreMap" type="Score">
+		<result property="id" column="pk_id" />
+		<result property="name" column="name" />
+		<result property="type" column="type" />
+		<result property="studentId" column="fk_student_id" />
+		<result property="score" column="score" />
+		<result property="pic" column="pic" />
+		<result property="coreBatchId" column="fk_score_batch_id" />
+		<result property="managerId" column="fk_manager_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Score" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_score(`name`, `type`, `fk_student_id`, `score`, `pic`, `fk_score_batch_id`, `fk_manager_id`, `create_time`)
+		VALUES(#{name}, #{type}, #{studentId}, #{score}, #{pic}, #{scoreBatchId}, #{managerId}, #{createTime})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="scoreMap">
+		SELECT * 
+		FROM t_score
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="scoreMap">
+        SELECT * 
+        FROM t_score
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="scoreMap">
+        SELECT * 
+        FROM t_score
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_score
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Score">
+		UPDATE t_score
+		SET `name` = #{name},
+		`type` = #{type},
+		`fk_student_id` = #{studentId},
+		`score` = #{score},
+		`pic` = #{pic},
+		`fk_score_batch_id` = #{scoreBtachId},
+		`fk_manager_id` = #{managerId},
+		`create_time` = #{createTime}
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_score
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_score
+    </delete>
+    <select id="selectByStudentId" parameterType="Map" resultMap="scoreMap">
+        SELECT * 
+        FROM t_score
+        WHERE fk_student_id = #{studentId}
+        <if test="type > 0">
+        	and type = #{type}
+        </if>
+        limit #{limit} offset #{offset}
+    </select>
+    <select id="countByStudentId" parameterType="Map" resultType="Integer">
+        SELECT count(1) 
+        FROM t_score
+        WHERE fk_student_id = #{studentId}
+        <if test="type > 0">
+        	and type = #{type}
+        </if>
+    </select>
+</mapper>

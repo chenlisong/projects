@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.OrderMapper">
+
+	<resultMap id="results" type="Order">
+		<result property="id" column="pk_id" />
+		<result property="shopId" column="fk_shop_id" />
+		<result property="userId" column="fk_user_id" />
+		<result property="serviceTypeId" column="fk_service_type_id" />
+		<result property="payMoney" column="pay_money" />
+		<result property="payState" column="pay_state" />
+		<result property="serverId" column="fk_server_id" />
+		<result property="state" column="state" />
+		<result property="serverBeginTime" column="server_begin_time" />
+		<result property="serverEndTime" column="server_end_time" />
+		<result property="cancelTime" column="cancel_time" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Order" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_order(`fk_shop_id`, `fk_user_id`, `fk_service_type_id`, `pay_money`, `pay_state`, `fk_server_id`,
+			`state`, `server_begin_time`, `server_end_time`, `cancel_time`, `create_time`)
+		VALUES(#{shopId}, #{userId}, #{serviceTypeId}, #{payMoney}, #{payState}, #{serverId}, #{state},
+		#{serverBeginTime}, #{serverEndTime}, #{cancelTime}, now())
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="results">
+		SELECT * 
+		FROM t_order
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_order
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_order
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_order
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Order">
+		UPDATE t_order
+		<set>
+			<if test="shopId != null">
+				`fk_shop_id` = #{shopId},
+			</if>
+			<if test="userId != null">
+				`fk_user_id` = #{userId},
+			</if>
+			<if test="serviceTypeId != null">
+				`fk_service_type_id` = #{serviceTypeId},
+			</if>
+			<if test="payMoney != null">
+				`pay_money` = #{payMoney},
+			</if>
+			<if test="payState != null">
+				`pay_state` = #{payState},
+			</if>
+			<if test="serverId != null">
+				`fk_server_id` = #{serverId},
+			</if>
+			<if test="state != null">
+				`state` = #{state},
+			</if>
+			<if test="serverBeginTime != null">
+				`server_begin_time` = #{serverBeginTime},
+			</if>
+			<if test="serverEndTime != null">
+				`server_end_time` = #{serverEndTime},
+			</if>
+			<if test="cancelTime != null">
+				`cancel_time` = #{cancelTime},
+			</if>
+			<if test="createTime != null">
+				`create_time` = #{createTime},
+			</if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_order
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_order
+    </delete>
+
+	<select id="selectByUserid" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_order
+		WHERE fk_user_id = #{userId}
+		<if test="state > 0">
+			and `state` = #{state}
+		</if>
+		order by pk_id desc
+	</select>
+
+	<select id="selectByShopId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_order
+		WHERE fk_shop_id = #{shopId}
+		<if test="serverId > 0">
+			and fk_server_id = #{serverId}
+		</if>
+		<if test="state > 0">
+			and `state` = #{state}
+		</if>
+	</select>
+
+</mapper>

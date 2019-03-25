@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.duolanjian.java.eagle.mapperlog.StudentMapper">
+
+	<resultMap id="studentMap" type="Student">
+		<result property="id" column="pk_id" />
+		<result property="name" column="name" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_student(`name`) 
+		VALUES(#{name})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="studentMap">
+		SELECT * 
+		FROM t_student
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="studentMap">
+        SELECT * 
+        FROM t_student
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="studentMap">
+        SELECT * 
+        FROM t_student
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_student
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+
+	<update id="update" parameterType="Student">
+		UPDATE t_student
+		SET `mobile` = #{mobile},
+		    `username` = #{userName},
+		    `password` = #{password},
+		    `create_time` = #{createTime},
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_student
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_student
+    </delete>
+	
+</mapper>

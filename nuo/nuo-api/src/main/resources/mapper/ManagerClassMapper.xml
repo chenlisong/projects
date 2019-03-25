@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.ManagerClassMapper">
+
+	<resultMap id="managerClassMap" type="ManagerClass">
+		<result property="id" column="pk_id" />
+		<result property="managerId" column="fk_manager_id" />
+		<result property="schoolId" column="fk_school_id" />
+		<result property="classId" column="fk_class_id" />
+		<result property="role" column="role" />
+		<result property="createId" column="fk_create_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="ManagerClass" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_manager_class(`fk_manager_id`, fk_school_id, `fk_class_id`, `role`, `fk_create_id` `create_time`)
+		VALUES(#{managerId}, #{schoolId}, #{classId}, #{role}, #{createId}, #{createTime})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="managerClassMap">
+		SELECT * 
+		FROM t_manager_class
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="managerClassMap">
+        SELECT * 
+        FROM t_manager_class
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="managerClassMap">
+        SELECT * 
+        FROM t_manager_class
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_manager_class
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="ManagerClass">
+		UPDATE t_manager_class
+		SET `fk_manager_id` = #{managerId},
+		`fk_school_id` = #{schoolId},
+		`fk_class_id` = #{classId},
+		`role` = #{role},
+		`fk_create_id` = #{createId},
+		`create_time` = #{createTime}
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_manager_class
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_manager_class
+    </delete>
+
+    <select id="selectByRole" parameterType="Map" resultMap="managerClassMap">
+        SELECT *
+        FROM t_manager_class
+        WHERE role = #{role}
+        <if test="schoolId > 0">
+            and fk_school_id = #{schoolId}
+        </if>
+        <if test="classId > 0">
+            and fk_class_id = #{classId}
+        </if>
+        limit #{limit} offset #{offset}
+    </select>
+
+    <select id="countByRole" parameterType="Map" resultType="Integer">
+        SELECT *
+        FROM t_manager_class
+        WHERE role = #{role}
+        <if test="schoolId > 0">
+            and fk_school_id = #{schoolId}
+        </if>
+        <if test="classId > 0">
+            and fk_class_id = #{classId}
+        </if>
+    </select>
+
+    <select id="selectByManagerId" parameterType="Map" resultMap="managerClassMap">
+        SELECT *
+        FROM t_manager_class
+        WHERE fk_manager_id = #{managerId}
+    </select>
+</mapper>

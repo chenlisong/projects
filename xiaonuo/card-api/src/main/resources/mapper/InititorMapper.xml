@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.InititorMapper">
+
+	<resultMap id="results" type="Inititor">
+		<result property="id" column="pk_id" />
+		<result property="userId" column="fk_user_id" />
+		<result property="parentId" column="fk_parent_id" />
+		<result property="state" column="state" />
+		<result property="readState" column="read_state" />
+		<result property="card" column="card" />
+		<result property="formId" column="form_id" />
+		<result property="qrUrl" column="qr_url" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Inititor" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_inititor(`fk_user_id`, `fk_parent_id`, `state`, `read_state`, `card`, `create_time`, `form_id`, `qr_url`)
+		VALUES(#{userId}, #{parentId}, #{state}, #{readState}, #{card}, now(), #{formId}, #{qrUrl})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="results">
+		SELECT * 
+		FROM t_inititor
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_inititor
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_inititor
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_inititor
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="Inititor">
+		UPDATE t_inititor
+		<set>
+			<if test="userId != null">
+				`fk_user_id` = #{userId},
+			</if>
+			<if test="parentId != null">
+				`fk_parent_id` = #{parentId},
+			</if>
+			<if test="state != null">
+				`state` = #{state},
+			</if>
+			<if test="card != null">
+				`card` = #{card},
+			</if>
+			<if test="createTime != null">
+				`create_time` = #{createTime},
+			</if>
+			<if test="formId != null">
+				`form_id` = #{formId},
+			</if>
+			<if test="qrUrl != null">
+				`qr_url` = #{qrUrl},
+			</if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_inititor
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_inititor
+    </delete>
+
+	<select id="selectCallUndo" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_inititor
+		WHERE fk_user_id = #{userId}
+		and fk_parent_id = 0
+		and state = 1
+		limit 1
+	</select>
+
+	<select id="selectByParentId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_inititor
+		WHERE fk_parent_id = #{parentId}
+		order by pk_id desc
+	</select>
+
+	<update id="fix" parameterType="Map">
+		UPDATE t_inititor
+		set `state` = #{state}
+		WHERE pk_id = #{id}
+	</update>
+
+	<select id="selectByUserId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_inititor
+		WHERE fk_user_id = #{userId}
+		order by pk_id desc
+	</select>
+	<select id="countTodayHelp" parameterType="Map" resultType="Integer">
+		SELECT count(1)
+		FROM t_inititor
+		WHERE fk_user_id = #{userId} and to_days(create_time) = to_days(now()) and `fk_parent_id` > 0
+	</select>
+
+	<update id="updateReadState" parameterType="Map">
+		UPDATE t_inititor
+		set `read_state` = #{readState}
+		WHERE pk_id IN
+		<foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</update>
+
+</mapper>

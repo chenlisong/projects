@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="defaultStatementTimeout" value="5" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="User" type="com.duolanjian.java.eagle.bean.User" />
+		<typeAlias alias="Hour" type="com.duolanjian.java.eagle.bean.Hour" />
+		<typeAlias alias="Day" type="com.duolanjian.java.eagle.bean.Day" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/HourMapper.xml" />
+		<mapper resource="mapper/DayMapper.xml" />
+	</mappers>
+
+</configuration>
+

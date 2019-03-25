@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.ClassesMapper">
+
+	<resultMap id="classesMap" type="Classes">
+		<result property="id" column="pk_id" />
+		<result property="grade" column="grade" />
+		<result property="number" column="number" />
+		<result property="schoolId" column="fk_school_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="Classes" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_class(`grade`, `number`, `fk_school_id`, `create_time`)
+		VALUES(#{grade}, #{number}, #{schoolId}, #{createTime})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="classesMap">
+		SELECT * 
+		FROM t_class
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="classesMap">
+        SELECT * 
+        FROM t_class
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="classesMap">
+        SELECT * 
+        FROM t_class
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_class
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    
+	<update id="update" parameterType="Classes">
+		UPDATE t_class
+		SET `grade` = #{grade},
+		`number` = #{number},
+		`fk_school_id` = #{schoolId},
+		`create_time` = #{createTime}
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_class
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_class
+    </delete>
+    <select id="countListByPage" parameterType="Map" resultType="Integer">
+        SELECT count(1) 
+        FROM t_class
+    </select>
+</mapper>

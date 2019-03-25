@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="defaultStatementTimeout" value="5" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="User" type="com.yinuo.bean.User" />
+		<typeAlias alias="Student" type="com.yinuo.bean.Student" />
+		<typeAlias alias="UserStudent" type="com.yinuo.bean.UserStudent" />
+		<typeAlias alias="Classes" type="com.yinuo.bean.Classes" />
+		<typeAlias alias="Course" type="com.yinuo.bean.Course" />
+		<typeAlias alias="Score" type="com.yinuo.bean.Score" />
+		<typeAlias alias="ScoreBatch" type="com.yinuo.bean.ScoreBatch" />
+		<typeAlias alias="Manager" type="com.yinuo.bean.Manager" />
+		<typeAlias alias="ManagerClass" type="com.yinuo.bean.ManagerClass" />
+		<!-- <typeAlias alias="Order" type="com.duolanjian.java.market.bean.Order" />
+		<typeAlias alias="Shop" type="com.duolanjian.java.market.bean.Shop" />
+		<typeAlias alias="Commodity" type="com.duolanjian.java.market.bean.Commodity" />
+		<typeAlias alias="Address" type="com.duolanjian.java.market.bean.Address" />
+		<typeAlias alias="Cart" type="com.duolanjian.java.market.bean.Cart" />
+		<typeAlias alias="OrderDetail" type="com.duolanjian.java.market.bean.OrderDetail" />
+		
+		<typeAlias alias="Evaluate" type="com.duolanjian.java.market.bean.Evaluate" />
+		<typeAlias alias="File" type="com.duolanjian.java.market.bean.File" /> -->
+		
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/StudentMapper.xml" />
+		<mapper resource="mapper/UserStudentMapper.xml" />
+		<mapper resource="mapper/ClassesMapper.xml" />
+		<mapper resource="mapper/CourseMapper.xml" />
+		<mapper resource="mapper/ScoreMapper.xml" />
+		<mapper resource="mapper/ScoreBatchMapper.xml" />
+		<mapper resource="mapper/ManagerMapper.xml" />
+		<mapper resource="mapper/ManagerClassMapper.xml" />
+		<!-- <mapper resource="mapper/OrderMapper.xml"/>
+		<mapper resource="mapper/ShopMapper.xml"/>
+		<mapper resource="mapper/CommodityMapper.xml"/>
+		<mapper resource="mapper/AddressMapper.xml"/>
+		<mapper resource="mapper/CartMapper.xml"/>
+        <mapper resource="mapper/OrderDetailMapper.xml"/>
+		<mapper resource="mapper/EvaluateMapper.xml"/>
+		<mapper resource="mapper/FileMapper.xml"/> -->
+		
+	</mappers>
+
+</configuration>
+

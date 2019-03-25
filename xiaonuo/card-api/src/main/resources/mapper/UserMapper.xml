@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.UserMapper">
+
+	<resultMap id="userMap" type="User">
+		<result property="id" column="pk_id" />
+		<result property="wechatOpenid" column="wechat_openid" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_user(`wechat_openid`, `create_time`)
+		VALUES(#{wechatOpenid}, now())
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="userMap">
+		SELECT * 
+		FROM t_user
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="userMap">
+        SELECT * 
+        FROM t_user
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="userMap">
+        SELECT * 
+        FROM t_user
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_user
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="User">
+		UPDATE t_user
+		<set>
+			<if test="wechatOpenid != null">
+				`wechat_openid` = #{wechatOpenid},
+			</if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_user
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_user
+    </delete>
+	<select id="selectByOpenid" parameterType="Map" resultMap="userMap">
+		SELECT * 
+		FROM t_user
+		WHERE `wechat_openid` = #{wechatOpenid} limit 1
+	</select>
+
+</mapper>

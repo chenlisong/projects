@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yinuo.mapper.ServiceTypeMapper">
+
+	<resultMap id="results" type="ServiceType">
+		<result property="id" column="pk_id" />
+		<result property="shopId" column="fk_shop_id" />
+		<result property="name" column="name" />
+		<result property="price" column="price" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="ServiceType" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_service_type(`fk_shop_id`, `name`, `price`, `create_time`)
+		VALUES(#{shopId}, #{name}, #{price}, now())
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="results">
+		SELECT * 
+		FROM t_service_type
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_service_type
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="results">
+        SELECT * 
+        FROM t_service_type
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_service_type
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+	<update id="update" parameterType="ServiceType">
+		UPDATE t_service_type
+		<set>
+			<if test="shopId != null">
+				`fk_shop_id` = #{shopId},
+			</if>
+			<if test="name != null">
+				`name` = #{name},
+			</if>
+			<if test="price != null">
+				`price` = #{price},
+			</if>
+			<if test="createTime != null">
+				`create_time` = #{createTime},
+			</if>
+		</set>
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_service_type
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_service_type
+    </delete>
+	<select id="selectByShopId" parameterType="Map" resultMap="results">
+		SELECT *
+		FROM t_service_type
+		WHERE fk_shop_id = #{shopId}
+	</select>
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xmlns:mvc="http://www.springframework.org/schema/mvc"  
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans    
+                        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd    
+                        http://www.springframework.org/schema/context    
+                        http://www.springframework.org/schema/context/spring-context-3.1.xsd    
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop-2.0.xsd  
+                        http://www.springframework.org/schema/mvc      
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                        http://www.springframework.org/schema/task
+						http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+                        
+    <context:annotation-config/>
+                          
+    <!-- 自动扫描 -->  
+    <context:component-scan base-package="com.company.java" /> 
+    
+    <!-- 启用AspectJ对Annotation的支持 -->         
+    <aop:aspectj-autoproxy proxy-target-class="true">
+    	<aop:include name="indexAspect" />
+    </aop:aspectj-autoproxy>
+    
+    <bean id="indexAspect" class="com.company.java.aspect.IndexAspect"/>
+    
+    <task:scheduler id="scheduler" pool-size="10" />  
+    <task:executor id="executor" keep-alive="3600" pool-size="100-200" 
+    queue-capacity="500" rejection-policy="CALLER_RUNS" /> 
+    <task:annotation-driven executor="executor" scheduler="scheduler" />
+</beans>  

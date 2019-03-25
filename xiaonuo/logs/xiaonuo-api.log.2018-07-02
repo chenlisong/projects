@@ -1,0 +1,574 @@
+[INFO] [2018-07-02 17:30:47][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-07-02 17:30:47][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2de23121, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63475ace, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4988d8b8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@c0c2f8d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@305b7c14, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6913c1fb]
+[INFO] [2018-07-02 17:30:47][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-02 17:30:48][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@37f1104d: startup date [Mon Jul 02 17:30:48 CST 2018]; root of context hierarchy
+[INFO] [2018-07-02 17:30:48][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-02 17:30:48][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5 [built 02-January-2015 13:25:04 -0500; debug? true; trace: 10]
+[INFO] [2018-07-02 17:30:49][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [xiaonuo.properties]
+[INFO] [2018-07-02 17:30:49][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 17:31:33][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-07-02 17:31:33][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6cc86152, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@611a990b, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7cbeac65, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7fe82967, org.springframework.test.context.transaction.TransactionalTestExecutionListener@50850539, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@65e21ce3]
+[INFO] [2018-07-02 17:31:33][com.yinuo.util.MD5Util]text: chenlisong123456..---
+[INFO] [2018-07-02 17:31:33][com.yinuo.util.MD5Util]md5: 305220db313aee85ab238b606cfb9ffd
+[INFO] [2018-07-02 17:31:33][com.yinuo.util.MD5Util]convert md5: GDAFFDGEGLAFGLBDBM
+[INFO] [2018-07-02 17:31:37][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-07-02 17:31:37][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@74d6736, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@52a33c3f, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@668625f5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@19a20bb2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@75babb67, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3eb3232b]
+[ERROR] [2018-07-02 17:31:37][com.yinuo.util.EmailUtil]exception:
+javax.mail.AuthenticationFailedException: 535 Error: ÊÚÈ¨Âë´íÎó£¬ÇëÊäÈëÕýÈ·µÄÊÚÈ¨Âë¡£ÏêÇéÇë¿´: http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:826)
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:761)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:685)
+	at javax.mail.Service.connect(Service.java:345)
+	at javax.mail.Service.connect(Service.java:226)
+	at com.yinuo.util.EmailUtil.sendEmail(EmailUtil.java:58)
+	at com.duolanjian.java.market.util.EmailUtilTest.sendEmail(EmailUtilTest.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:254)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:89)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:193)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[INFO] [2018-07-02 17:31:37][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-07-02 17:31:37][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1fbf088b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1943c1f2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d70f722, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1e1eeedd, org.springframework.test.context.transaction.TransactionalTestExecutionListener@798256c5, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7ec95456]
+[INFO] [2018-07-02 17:31:37][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-07-02 17:31:37][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7f7b6639, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@16ac5d35, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3965bdf9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3c0e00a8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1860f3be, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6cd15072]
+[INFO] [2018-07-02 17:31:37][com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource]Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2s4j8p9wp2a8oqde4yw4|2cc04358, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2s4j8p9wp2a8oqde4yw4|2cc04358, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://47.100.24.40:3306/xiaonuo?useUnicode=true&characterEncoding=utf8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 180, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 60, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+[INFO] [2018-07-02 17:31:38][org.springframework.test.context.support.DefaultTestContextBootstrapper]Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+[INFO] [2018-07-02 17:31:38][org.springframework.test.context.support.DefaultTestContextBootstrapper]Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4091b9c3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@29050de5, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3610f277, org.springframework.test.context.support.DirtiesContextTestExecutionListener@c689973, org.springframework.test.context.transaction.TransactionalTestExecutionListener@41fa769c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@40113163]
+[INFO] [2018-07-02 17:31:38][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@37f1104d: startup date [Mon Jul 02 17:30:48 CST 2018]; root of context hierarchy
+[INFO] [2018-07-02 17:55:44][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2018-07-02 17:55:44][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Mon Jul 02 17:55:44 CST 2018]; root of context hierarchy
+[INFO] [2018-07-02 17:55:44][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-02 17:55:45][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-02 17:55:45][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5 [built 02-January-2015 13:25:04 -0500; debug? true; trace: 10]
+[INFO] [2018-07-02 17:55:45][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [xiaonuo.properties]
+[INFO] [2018-07-02 17:55:45][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 17:55:47][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 2452 ms
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2018-07-02 17:55:47][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 17:55:47 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 17:55:47][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2018-07-02 17:55:47][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 17:55:47][org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessor]No TaskExecutor bean found for async annotation processing.
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ShopController.get(com.yinuo.bean.User,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ShopController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.OrderController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/create],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/work],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postWork(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/done],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postDone(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/cancel],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postCancel(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/money],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postMoney(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/files],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post(com.yinuo.bean.User,org.springframework.web.multipart.MultipartFile)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/get-token],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post1()
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post2()
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServerController.get(com.yinuo.bean.User,int,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServerController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords/count],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.counts(com.yinuo.bean.User,int,int,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserChildController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserChildController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserChildController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserShopController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserShopController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.UserController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechatLogin],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.post(java.lang.String,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 17:55:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users/nickName],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.getByNickname(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 17:55:47 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 17:55:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 17:55:47 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 17:55:48][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]Detected @ExceptionHandler methods in springExceptionHandlers
+[INFO] [2018-07-02 17:55:48][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1527 ms
+[INFO] [2018-07-02 17:55:49][com.yinuo.task.TaskService]execute taskCycle
+[ERROR] [2018-07-02 17:56:13][com.yinuo.exception.DefaultExceptionHandlers]operation failed, exception:
+java.lang.NullPointerException
+	at com.yinuo.bean.User.getSex(User.java:73)
+	at Serializer_1.write1(Unknown Source)
+	at Serializer_1.write(Unknown Source)
+	at com.alibaba.fastjson.serializer.ObjectArraySerializer.write(ObjectArraySerializer.java:96)
+	at com.alibaba.fastjson.serializer.JSONSerializer.write(JSONSerializer.java:369)
+	at com.alibaba.fastjson.JSON.toJSONString(JSON.java:418)
+	at com.alibaba.fastjson.JSON.toJSONString(JSON.java:406)
+	at com.yinuo.aspect.IndexAspect.around(IndexAspect.java:117)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:620)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:609)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
+	at com.yinuo.controller.OrderController$$EnhancerBySpringCGLIB$$14c656dd.get(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1496)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1467)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:208)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:274)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+
+[INFO] [2018-07-02 17:56:13][com.yinuo.aspect.IndexAspect]request: url: http://127.0.0.1:8082/orders, response: {"code":500,"desc":"内部错误:java.lang.NullPointerException"}
+[INFO] [2018-07-02 17:58:43][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2018-07-02 17:58:44][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Mon Jul 02 17:58:44 CST 2018]; root of context hierarchy
+[INFO] [2018-07-02 17:58:44][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-02 17:58:44][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-02 17:58:44][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5 [built 02-January-2015 13:25:04 -0500; debug? true; trace: 10]
+[INFO] [2018-07-02 17:58:45][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [xiaonuo.properties]
+[INFO] [2018-07-02 17:58:45][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 17:58:46][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 2972 ms
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2018-07-02 17:58:47][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 17:58:47 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 17:58:47][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2018-07-02 17:58:47][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 17:58:47][org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessor]No TaskExecutor bean found for async annotation processing.
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ShopController.get(com.yinuo.bean.User,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ShopController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserShopController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserShopController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.OrderController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/create],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/work],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postWork(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/done],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postDone(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/cancel],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postCancel(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/money],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postMoney(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/files],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post(com.yinuo.bean.User,org.springframework.web.multipart.MultipartFile)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/get-token],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post1()
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post2()
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServerController.get(com.yinuo.bean.User,int,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServerController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords/count],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.counts(com.yinuo.bean.User,int,int,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserChildController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserChildController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserChildController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.UserController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechatLogin],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.post(java.lang.String,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 17:58:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users/nickName],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.getByNickname(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 17:58:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 17:58:47 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 17:58:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 17:58:47 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 17:58:48][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]Detected @ExceptionHandler methods in springExceptionHandlers
+[INFO] [2018-07-02 17:58:49][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1922 ms
+[INFO] [2018-07-02 17:58:50][com.yinuo.task.TaskService]execute taskCycle
+[INFO] [2018-07-02 17:58:53][com.yinuo.aspect.IndexAspect]request: url: http://127.0.0.1:8082/orders, args: [{},1,0,0,0], response: {"code":401,"desc":"需要登录","loginUrl":"不授权无法使用，如果已经拒绝，请删除小程序，重新添加"}
+[INFO] [2018-07-02 18:01:17][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2018-07-02 18:01:17][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Mon Jul 02 18:01:17 CST 2018]; root of context hierarchy
+[INFO] [2018-07-02 18:01:17][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-02 18:01:18][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-02 18:01:18][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5 [built 02-January-2015 13:25:04 -0500; debug? true; trace: 10]
+[INFO] [2018-07-02 18:01:19][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [xiaonuo.properties]
+[INFO] [2018-07-02 18:01:19][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 18:01:21][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3697 ms
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2018-07-02 18:01:21][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 18:01:21 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 18:01:21][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2018-07-02 18:01:21][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 18:01:21][org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessor]No TaskExecutor bean found for async annotation processing.
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ShopController.get(com.yinuo.bean.User,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ShopController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserShopController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserShopController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.OrderController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/create],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/work],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postWork(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/done],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postDone(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/cancel],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postCancel(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/money],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postMoney(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/files],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post(com.yinuo.bean.User,org.springframework.web.multipart.MultipartFile)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/get-token],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post1()
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post2()
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServerController.get(com.yinuo.bean.User,int,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServerController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords/count],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.counts(com.yinuo.bean.User,int,int,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserChildController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserChildController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserChildController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.UserController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechatLogin],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.post(java.lang.String,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 18:01:21][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users/nickName],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.getByNickname(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:01:22][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 18:01:21 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 18:01:22][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 18:01:21 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 18:01:22][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]Detected @ExceptionHandler methods in springExceptionHandlers
+[INFO] [2018-07-02 18:01:23][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 2068 ms
+[INFO] [2018-07-02 18:01:24][com.yinuo.task.TaskService]execute taskCycle
+[ERROR] [2018-07-02 18:02:32][com.yinuo.exception.DefaultExceptionHandlers]operation failed, exception:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'serverId' not found. Available parameters are [0, 1, 2, param3, param1, param2]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371)
+	at com.sun.proxy.$Proxy45.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:198)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:119)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:63)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
+	at com.sun.proxy.$Proxy58.selectByShopId(Unknown Source)
+	at com.yinuo.service.OrderService.selectByShopId(OrderService.java:66)
+	at com.yinuo.controller.OrderController.get(OrderController.java:40)
+	at com.yinuo.controller.OrderController$$FastClassBySpringCGLIB$$3de0af1b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:720)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:97)
+	at com.yinuo.aspect.IndexAspect.around(IndexAspect.java:170)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:620)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:609)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
+	at com.yinuo.controller.OrderController$$EnhancerBySpringCGLIB$$a318b5a0.get(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1496)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1467)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:208)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:274)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'serverId' not found. Available parameters are [0, 1, 2, param3, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:165)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:123)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:1657)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:92)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:170)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:210)
+	at org.apache.ibatis.ognl.ASTGreater.getValueBody(ASTGreater.java:49)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:170)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:210)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:333)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:413)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:395)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:48)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:40)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:278)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:75)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:108)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 75 more
+
+[INFO] [2018-07-02 18:02:32][com.yinuo.aspect.IndexAspect]request: url: http://127.0.0.1:8082/orders, args: [{},1,0,0,0], userId: 1, userName: 凭栏处、潇潇雨歇, response: {"code":500,"desc":"内部错误:nested exception is org.apache.ibatis.binding.BindingException: Parameter 'serverId' not found. Available parameters are [0, 1, 2, param3, param1, param2]"}
+[ERROR] [2018-07-02 18:03:38][com.yinuo.exception.DefaultExceptionHandlers]operation failed, exception:
+org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.binding.BindingException: Parameter 'serverId' not found. Available parameters are [0, 1, 2, param3, param1, param2]
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:75)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:371)
+	at com.sun.proxy.$Proxy45.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:198)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:119)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:63)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:52)
+	at com.sun.proxy.$Proxy58.selectByShopId(Unknown Source)
+	at com.yinuo.service.OrderService.selectByShopId(OrderService.java:66)
+	at com.yinuo.controller.OrderController.get(OrderController.java:40)
+	at com.yinuo.controller.OrderController$$FastClassBySpringCGLIB$$3de0af1b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:720)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:97)
+	at com.yinuo.aspect.IndexAspect.around(IndexAspect.java:170)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:620)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:609)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:655)
+	at com.yinuo.controller.OrderController$$EnhancerBySpringCGLIB$$a318b5a0.get(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:817)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:731)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:968)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:859)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:844)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:848)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1496)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:121)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1467)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:208)
+	at com.thetransactioncompany.cors.CORSFilter.doFilter(CORSFilter.java:274)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1476)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:501)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'serverId' not found. Available parameters are [0, 1, 2, param3, param1, param2]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:165)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:123)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:1657)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:92)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:170)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:210)
+	at org.apache.ibatis.ognl.ASTGreater.getValueBody(ASTGreater.java:49)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:170)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:210)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:333)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:413)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:395)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:48)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32)
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:33)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:40)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:278)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:75)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:108)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:358)
+	... 75 more
+
+[INFO] [2018-07-02 18:03:38][com.yinuo.aspect.IndexAspect]request: url: http://127.0.0.1:8082/orders, args: [{},1,0,0,0], userId: 1, userName: 凭栏处、潇潇雨歇, response: {"code":500,"desc":"内部错误:nested exception is org.apache.ibatis.binding.BindingException: Parameter 'serverId' not found. Available parameters are [0, 1, 2, param3, param1, param2]"}
+[INFO] [2018-07-02 18:04:42][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+[INFO] [2018-07-02 18:04:43][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Mon Jul 02 18:04:43 CST 2018]; root of context hierarchy
+[INFO] [2018-07-02 18:04:43][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2018-07-02 18:04:43][com.mchange.v2.log.MLog]MLog clients using slf4j logging.
+[INFO] [2018-07-02 18:04:43][com.mchange.v2.c3p0.C3P0Registry]Initializing c3p0-0.9.5 [built 02-January-2015 13:25:04 -0500; debug? true; trace: 10]
+[INFO] [2018-07-02 18:04:44][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [xiaonuo.properties]
+[INFO] [2018-07-02 18:04:44][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 18:04:46][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 3418 ms
+[INFO] [2018-07-02 18:04:46][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+[INFO] [2018-07-02 18:04:46][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 18:04:46 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 18:04:46][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+[INFO] [2018-07-02 18:04:46][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2018-07-02 18:04:46][org.springframework.scheduling.annotation.AsyncAnnotationBeanPostProcessor]No TaskExecutor bean found for async annotation processing.
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.get(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceTypes],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceTypeController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ShopController.get(com.yinuo.bean.User,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ShopController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/shops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserShopController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserShopController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userShops],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserShopController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.OrderController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/create],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/money],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postMoney(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/done],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postDone(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/cancel],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postCancel(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/orders/work],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.OrderController.postWork(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/files],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post(com.yinuo.bean.User,org.springframework.web.multipart.MultipartFile)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/get-token],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post1()
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/api/users],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.FileController.post2()
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServerController.get(com.yinuo.bean.User,int,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServerController.put(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/servers],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServerController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.get(com.yinuo.bean.User,int,int,int,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/moneyRecords/count],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.MoneyRecordController.counts(com.yinuo.bean.User,int,int,int,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/serviceBinds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.ServiceBindController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserChildController.get(com.yinuo.bean.User,int,int,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[DELETE]}" onto public java.lang.Object com.yinuo.controller.UserChildController.delete(com.yinuo.bean.User,int)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userChilds],methods=[POST]}" onto public java.lang.Object com.yinuo.controller.UserChildController.post(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users],methods=[PUT]}" onto public java.lang.Object com.yinuo.controller.UserController.put(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechatLogin],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.post(java.lang.String,java.lang.String,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/users/nickName],methods=[GET]}" onto public java.lang.Object com.yinuo.controller.UserController.getByNickname(com.yinuo.bean.User,java.lang.String)
+[INFO] [2018-07-02 18:04:47][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 18:04:46 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 18:04:48][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter]Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Mon Jul 02 18:04:46 CST 2018]; parent: Root WebApplicationContext
+[INFO] [2018-07-02 18:04:48][org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver]Detected @ExceptionHandler methods in springExceptionHandlers
+[INFO] [2018-07-02 18:04:48][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 2411 ms
+[INFO] [2018-07-02 18:04:49][com.yinuo.task.TaskService]execute taskCycle
+[INFO] [2018-07-02 18:04:54][com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource]Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2s4j8p9wp3huvu32krpi|6b92a0d1, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2s4j8p9wp3huvu32krpi|6b92a0d1, idleConnectionTestPeriod -> 0, initialPoolSize -> 5, jdbcUrl -> jdbc:mysql://47.100.24.40:3306/xiaonuo?useUnicode=true&characterEncoding=utf8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 180, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 60, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {password=******, user=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+[INFO] [2018-07-02 18:04:55][com.yinuo.aspect.IndexAspect]request: url: http://127.0.0.1:8082/orders, args: [{},1,0,0,0], userId: 1, userName: 凭栏处、潇潇雨歇, response: {"count":0,"data":[]}

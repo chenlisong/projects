@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.duolanjian.java.wow.mapper.UserMapper">
+
+	<resultMap id="userMap" type="com.test.bean.User">
+		<result property="id" column="pk_id" />
+		<result property="mobile" column="mobile" />
+		<result property="userName" column="username" />
+		<result property="password" column="password" />
+		<result property="serverId" column="fk_server_id" />
+		<result property="playName" column="play_name" />
+		<result property="createTime" column="create_time" />
+		<result property="updateTime" column="update_time" />
+		<result property="wowId" column="fk_wow_id" />
+		<result property="weixin" column="weixin" />
+	</resultMap>
+	
+    <insert id="insert" parameterType="com.test.bean.User" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO t_user(`mobile`, `username`, `password`, `create_time`) 
+		VALUES(#{mobile}, #{userName}, #{password}, #{createTime})
+	</insert>
+	<select id="selectOne" parameterType="Map" resultMap="userMap">
+		SELECT * 
+		FROM t_user
+		WHERE pk_id = #{id}
+	</select>
+	
+	<select id="selectListByPage" parameterType="Map" resultMap="userMap">
+        SELECT * 
+        FROM t_user
+        order by pk_id desc
+        LIMIT #{limit}
+        OFFSET #{offset}
+    </select>
+    <select id="selectListByIds" parameterType="Map" resultMap="userMap">
+        SELECT * 
+        FROM t_user
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+    <select id="countListByIds" parameterType="Map" resultType="Integer">
+        SELECT count(1)
+        FROM t_user
+        WHERE pk_id IN
+	    <foreach item="item" index="index" collection="ids" open="(" separator="," close=")">
+	        #{item}
+	    </foreach>
+    </select>
+
+	<update id="update" parameterType="com.test.bean.User">
+		UPDATE t_user
+		SET `mobile` = #{mobile},
+		    `username` = #{userName},
+		    `password` = #{password},
+		    `create_time` = #{createTime},
+		WHERE pk_id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Map">
+		delete from t_user
+		where pk_id = #{id}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from t_user
+    </delete>
+	
+	<select id="selectByMobile" parameterType="Map" resultMap="userMap">
+		SELECT * 
+		FROM t_user
+		WHERE mobile = #{mobile}
+		limit 1
+	</select>
+    
+</mapper>

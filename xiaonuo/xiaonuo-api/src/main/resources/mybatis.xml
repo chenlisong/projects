@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<configuration>
+
+	<settings>
+		<setting name="defaultStatementTimeout" value="5" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="User" type="com.yinuo.bean.User" />
+		<typeAlias alias="MoneyRecord" type="com.yinuo.bean.MoneyRecord" />
+		<typeAlias alias="Order" type="com.yinuo.bean.Order" />
+		<typeAlias alias="Server" type="com.yinuo.bean.Server" />
+		<typeAlias alias="ServiceBind" type="com.yinuo.bean.ServiceBind" />
+		<typeAlias alias="ServiceType" type="com.yinuo.bean.ServiceType" />
+		<typeAlias alias="Shop" type="com.yinuo.bean.Shop" />
+		<typeAlias alias="UserChild" type="com.yinuo.bean.UserChild" />
+		<typeAlias alias="UserShop" type="com.yinuo.bean.UserShop" />
+		
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/UserMapper.xml" />
+		<mapper resource="mapper/MoneyRecordMapper.xml" />
+		<mapper resource="mapper/OrderMapper.xml" />
+		<mapper resource="mapper/ServerMapper.xml" />
+		<mapper resource="mapper/ServiceBindMapper.xml" />
+		<mapper resource="mapper/ServiceTypeMapper.xml" />
+		<mapper resource="mapper/ShopMapper.xml" />
+		<mapper resource="mapper/UserChildMapper.xml" />
+		<mapper resource="mapper/UserShopMapper.xml" />
+		
+	</mappers>
+
+</configuration>
+
